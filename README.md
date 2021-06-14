@@ -31,7 +31,7 @@ Also before getting invloved into any of the workflow1 or workflow2 please make 
   * Add environment variables
     * export ANSIBLE_CONFIG=../ansible
     * export ANSIBLE_LIBRARY=../ansible
-  * py.test --inventory ../ansible/ixia-sonic --host-pattern sonic-s6100-dut --testbed vms-ixia-sonic --testbed_file ../ansible/testbed.csv --show-capture=stdout --log-cli-level info --showlocals -ra --allow_recover --skip_sanity --disable_loganalyzer ixia/bgp/test_bgp_community.py
+  * py.test --inventory ../ansible/snappi-sonic --host-pattern sonic-s6100-dut --testbed vms-snappi-sonic --testbed_file ../ansible/testbed.csv --show-capture=stdout --log-cli-level info --showlocals -ra --allow_recover --skip_sanity --disable_loganalyzer snappi/test_snappi.py
  * In this workflow your test script or code will remain intact even if docker image is destroyed unintentionally since you are actually keeping the code in the (mounted) local directory.
 ### workflow2
 * Simply load the docker image no mounts of local folders are required.
@@ -51,5 +51,5 @@ Also before getting invloved into any of the workflow1 or workflow2 please make 
   * Add environment variables
     * export ANSIBLE_CONFIG=../ansible
     * export ANSIBLE_LIBRARY=../ansible
-  * py.test --inventory ../ansible/ixia-sonic --host-pattern sonic-s6100-dut --testbed vms-ixia-sonic --testbed_file ../ansible/testbed.csv --show-capture=stdout --log-cli-level info --showlocals -ra --allow_recover --skip_sanity --disable_loganalyzer ixia/bgp/test_bgp_community.py
+  * py.test --inventory ../ansible/snappi-sonic --host-pattern sonic-s6100-dut --testbed vms-snappi-sonic --testbed_file ../ansible/testbed.csv --show-capture=stdout --log-cli-level info --showlocals -ra --allow_recover --skip_sanity --disable_loganalyzer snappi/test_snappi.py
 * In this workflow if you make certain local change inside the folder ~/sonic-mgmt/ that will not be saved if the container got corrupted somehow.
